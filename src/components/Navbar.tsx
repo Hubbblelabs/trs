@@ -27,6 +27,9 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isHome = pathname === "/";
+  const isTransparent = isHome && !isScrolled;
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -41,7 +44,9 @@ export function Navbar() {
             <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
               <Building2 className="h-6 w-6 text-primary" />
             </div>
-            <span className="font-serif text-2xl font-bold tracking-tight text-foreground">
+            <span
+              className={`font-serif text-2xl font-bold tracking-tight ${isTransparent ? "text-white" : "text-foreground"}`}
+            >
               TRS Realty
             </span>
           </Link>
@@ -52,23 +57,30 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors ${
                   pathname === link.href
-                    ? "text-primary font-semibold"
-                    : "text-muted-foreground"
+                    ? isTransparent
+                      ? "text-white font-semibold"
+                      : "text-primary font-semibold"
+                    : isTransparent
+                      ? "text-white/80 hover:text-white"
+                      : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button size="sm" className="rounded-full px-6 shadow-md shadow-primary/20">
+            <Button
+              size="sm"
+              className="rounded-full px-6 shadow-md shadow-primary/20"
+            >
               Book Consultation
             </Button>
           </nav>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-foreground"
+            className={`md:hidden ${isTransparent ? "text-white" : "text-foreground"}`}
             onClick={() => setMobileMenuOpen(true)}
           >
             <Menu className="h-6 w-6" />
@@ -98,7 +110,9 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-lg font-medium ${
-                    pathname === link.href ? "text-primary" : "text-muted-foreground"
+                    pathname === link.href
+                      ? "text-primary"
+                      : "text-muted-foreground"
                   }`}
                 >
                   {link.name}

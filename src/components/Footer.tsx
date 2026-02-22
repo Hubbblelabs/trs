@@ -69,15 +69,15 @@ export function Footer() {
             <h3 className="text-white font-semibold text-lg mb-4 font-serif">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm">
-                <MapPin className="h-5 w-5 text-primary shrink-0" />
+                <MapPin className="h-5 w-5 text-slate-300 shrink-0" />
                 <span>Level 4, Prestige Trade Tower,<br />Palace Road, Bangalore, 560001</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
+                <Phone className="h-5 w-5 text-slate-300 shrink-0" />
                 <span>+91 800 555 1234</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
-                <Mail className="h-5 w-5 text-primary shrink-0" />
+                <Mail className="h-5 w-5 text-slate-300 shrink-0" />
                 <span>hello@trsrealty.in</span>
               </li>
             </ul>
