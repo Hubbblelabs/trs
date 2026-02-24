@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Building2, Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import { Landmark, Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -21,15 +21,15 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="bg-primary p-2 rounded-lg">
-                <Building2 className="h-6 w-6 text-white" />
+                <Landmark className="h-6 w-6 text-white" />
               </div>
               <span className="font-serif text-2xl font-bold tracking-tight text-white">
                 TRS Realty
               </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              Premium real estate services in India. We help you find
-              personalized homes and high-yield investment properties.
+              Premium land & real estate advisory in India. We help you invest in
+              verified plots, agricultural land, and high-growth real estate.
             </p>
             <div className="flex items-center gap-4 pt-2">
               <Link href="#" className="hover:text-primary transition-colors">
@@ -87,7 +87,7 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold text-lg mb-4 font-serif">Newsletter</h3>
             <p className="text-sm text-slate-400 mb-4">
-              Subscribe to get the latest property updates and investment insights.
+              Subscribe to get the latest land listings and real estate investment insights.
             </p>
             <form className="flex flex-col gap-2" onSubmit={(e) => e.preventDefault()}>
               <input

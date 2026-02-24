@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Target, Eye, Shield, Award } from "lucide-react";
+import { Target, Eye, Shield, Award, MapPin, TreePine } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -11,8 +11,8 @@ export default function AboutPage() {
       <section className="relative bg-slate-950 text-white py-24 mb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-            alt="Office Building"
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            alt="Land & Real Estate"
             fill
             className="object-cover opacity-20 mix-blend-overlay"
           />
@@ -31,7 +31,7 @@ export default function AboutPage() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed"
           >
-            For over two decades, TRS Realty has been synonymous with trust, luxury, and unparalleled real estate expertise in India.
+            For over two decades, TRS Realty has been India&apos;s most trusted name in land advisory, real estate investment, and title-verified property transactions.
           </motion.p>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4 relative z-10">Our Mission</h2>
             <p className="text-slate-600 leading-relaxed relative z-10 text-lg">
-              To redefine the real estate experience by consistently delivering properties that exceed expectations, maintaining absolute transparency in every transaction, and building lasting relationships grounded in trust.
+              To redefine land ownership in India by offering title-verified, investment-worthy real estate with complete legal transparency. We empower every client to make confident land investments backed by decades of market expertise.
             </p>
           </motion.div>
 
@@ -71,7 +71,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl font-serif font-bold text-white mb-4 relative z-10">Our Vision</h2>
             <p className="text-slate-300 leading-relaxed relative z-10 text-lg">
-              To be India&apos;s most respected and sought-after luxury real estate advisory, known for our integrity, market acumen, and commitment to realizing our clients&apos; dreams of the perfect home and lucrative investments.
+              To be India&apos;s most respected land and real estate advisory, known for curating high-growth plots, agricultural land, and commercial real estate opportunities while ensuring every transaction is legally sound and investor-ready.
             </p>
           </motion.div>
         </section>
@@ -80,15 +80,15 @@ export default function AboutPage() {
         <section className="mb-24">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Core Values</h2>
-            <p className="text-slate-500 text-lg">The foundational principles that guide every interaction and transaction at TRS Realty.</p>
+            <p className="text-slate-500 text-lg">The foundational principles that guide every land advisory and real estate transaction at TRS Realty.</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Shield, title: "Integrity", desc: "We operate with uncompromised ethical standards and full transparency." },
-              { icon: Award, title: "Excellence", desc: "We deliver premium quality in both our property selections and our advisory services." },
-              { icon: Target, title: "Commitment", desc: "We are deeply committed to understanding and fulfilling our clients' precise needs." },
-              { icon: Eye, title: "Foresight", desc: "We anticipate market trends to secure long-term value for our investors." }
+              { icon: Shield, title: "Title Integrity", desc: "We ensure every land parcel is title-clear with complete legal documentation and encumbrance verification." },
+              { icon: Award, title: "Excellence", desc: "We curate only the finest land parcels — verified for zoning, access, and long-term appreciation potential." },
+              { icon: Target, title: "Client Commitment", desc: "We deeply understand each investor's goals and match them with the perfect land asset." },
+              { icon: Eye, title: "Market Foresight", desc: "We leverage two decades of data to identify high-growth corridors and emerging real estate hotspots." }
             ].map((value, i) => (
               <motion.div 
                 key={i}
@@ -108,11 +108,42 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* What We Offer */}
+        <section className="mb-24">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">What We Specialize In</h2>
+            <p className="text-slate-500 text-lg">Comprehensive land and real estate solutions across India.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: MapPin, title: "Residential Plots", desc: "Premium NA-converted plots in gated communities and emerging residential corridors across major Indian cities.", color: "bg-emerald-50 text-emerald-600" },
+              { icon: TreePine, title: "Agricultural & Farm Land", desc: "Verified agricultural land and ready-to-develop farm plots for organic farming, weekend homes, and long-term investment.", color: "bg-lime-50 text-lime-600" },
+              { icon: Target, title: "Commercial Real Estate", desc: "High-yield commercial land near IT corridors, highway junctions, and industrial zones — primed for business and ROI.", color: "bg-blue-50 text-blue-600" },
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="bg-white p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow"
+              >
+                <div className={`${item.color} w-14 h-14 rounded-xl flex items-center justify-center mb-5`}>
+                  <item.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-bold font-serif text-xl mb-3 text-slate-900">{item.title}</h3>
+                <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         {/* Leadership Team */}
         <section>
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Leadership Team</h2>
-            <p className="text-slate-500 text-lg">Meet the experts behind our two decades of continuous success.</p>
+            <p className="text-slate-500 text-lg">Meet the land experts behind our two decades of continuous success.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -124,12 +155,12 @@ export default function AboutPage() {
               },
               {
                 name: "Priya Menon",
-                role: "Head of Luxury Sales",
+                role: "Head of Land Acquisitions",
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
               },
               {
                 name: "Anand Verma",
-                role: "Director of Investments",
+                role: "Director of Real Estate Investments",
                 image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
               }
             ].map((member, i) => (

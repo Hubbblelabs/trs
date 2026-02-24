@@ -13,9 +13,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "TRS Realty | Premium Real Estate in India",
+  title: "TRS Realty | Premium Land & Real Estate in India",
   description:
-    "Discover premium, customized homes and commercial properties in India with TRS Realty.",
+    "India's trusted land & real estate advisory. Discover title-verified plots, agricultural land, commercial real estate, and prime investment opportunities with TRS Realty.",
 };
 
 import { Navbar } from "@/components/Navbar";

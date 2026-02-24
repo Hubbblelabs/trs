@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Building2 } from "lucide-react";
+import { Menu, X, Landmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -42,7 +42,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
-              <Building2 className="h-6 w-6 text-primary" />
+              <Landmark className="h-6 w-6 text-primary" />
             </div>
             <span
               className={`font-serif text-2xl font-bold tracking-tight ${isTransparent ? "text-white" : "text-foreground"}`}
@@ -74,7 +74,7 @@ export function Navbar() {
               size="sm"
               className="rounded-full px-6 shadow-md shadow-primary/20"
             >
-              Book Consultation
+              Get Land Advisory
             </Button>
           </nav>
 
@@ -119,7 +119,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Button className="mt-4 rounded-full w-full">
-                Book Consultation
+                Get Land Advisory
               </Button>
             </nav>
           </motion.div>
